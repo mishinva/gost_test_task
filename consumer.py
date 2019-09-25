@@ -43,7 +43,7 @@ async def main(loop):
                     print(message.body)
                     async with aiohttp.ClientSession() as session:
                         try:
-                            async with session.get(tg_url + '123', proxy=proxy) as resp:
+                            async with session.get(tg_url + message.body, proxy=proxy) as resp:
                                 print(await resp.text())
                         except Exception as e:
                             print({'title': 'Request error',
